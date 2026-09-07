@@ -45,7 +45,7 @@ sm=SMOTE(random_state=42,)
 x_train,y_train=sm.fit_resample(x_train,y_train)
 
 #random forest model
-RFmodel=RandomForestClassifier(n_estimators=150,random_state=42,max_depth=15,n_jobs=-1)
+RFmodel=RandomForestClassifier(n_estimators=150,random_state=42,max_depth=10,n_jobs=-1)
 RFmodel.fit(x_train,y_train)
 RFpredection=RFmodel.predict(x_test)
 RFaccuracy=accuracy_score(y_test,RFpredection)
